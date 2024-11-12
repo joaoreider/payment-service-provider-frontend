@@ -31,6 +31,12 @@ cd payment-service-provider-frontend
 mv .env.example .env
 ```
 
+3 - Install packages:
+
+```bash
+npm install
+```
+
 4 - Run:
 
 ```bash
