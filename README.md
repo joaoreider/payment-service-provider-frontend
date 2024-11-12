@@ -2,7 +2,7 @@
   Payment Service Provider - Frontend
 </h1>
 
-### See the bacckend repo on:
+### See the backend repo on:
 
 [Backend Repository](https://github.com/joaoreider/payment-service-provider-demo)
 
