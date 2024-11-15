@@ -3,9 +3,9 @@ import { AiTwotoneDollarCircle } from 'react-icons/ai';
 
 interface Transaction {
   id: number;
-  amount: number;
-  status: string;
-  date: string;
+  value: number;
+  description: string;
+  paymentMethod: string;
 }
 
 interface TransactionsListProps {
@@ -28,13 +28,16 @@ const TransactionsList= ({ transactions }: TransactionsListProps) => {
                 </Avatar>
               }
               title={
-                <span className={transaction.status === 'paid' ? 'text-green-500' : 'text-orange-500'}>
-                  ${transaction.amount.toFixed(2)}
+                <div className='flex gap-2 items-center'>
+                  <span className={transaction.paymentMethod === 'DEBIT' ? 'text-lg text-green-500' : 'text-lg text-orange-500'}>
+                  $ {transaction.value.toFixed(2)}
                 </span>
+                <span className='font-bold'>{transaction.paymentMethod === 'DEBIT' ? 'Paid' : 'Waiting Funds'}</span> 
+                </div>
               }
               description={
                 <>
-                  <span className='font-bold'>{transaction.status === 'paid' ? 'Paid' : 'Waiting Funds'}</span> - {transaction.date}
+                  {transaction.description}
                 </>
               }
             />
